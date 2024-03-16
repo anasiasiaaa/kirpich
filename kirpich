@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int length_otv, height_otv;
+    printf("Vvedite razmery otverstiya (dlyna i vysota): ");
+    scanf_s("%d %d", &length_otv, &height_otv);
+
+    int length_brick, width_brick, height_brick;
+    printf("Vvedite razmery kirpicha (dlyna, shirina i vysota): ");
+    scanf_s("%d %d %d", &length_brick, &width_brick, &height_brick);
+
+    if ((length_brick <= length_otv && width_brick <= height_otv) ||
+        (width_brick <= length_otv && length_brick <= height_otv)) {
+        if (length_brick < width_brick && length_brick < height_brick) {
+            printf("Kirpich voshel so storony dliny.\n");
+        }
+        else if (width_brick < length_brick && width_brick < height_brick) {
+            printf("Kirpich voshel so storony shiriny.\n");
+        }
+        else if (height_brick < width_brick && height_brick < length_brick) {
+            printf("Kirpich voshel so storony vysoty.\n");
+        }
+        else {
+            printf("Kirpich proidet v otverstie.\n");
+        }
+    }
+    else {
+        printf("Kirpich ne proidet v otverstie.\n");
+    }
+
+    return 0;
+}
